@@ -1,0 +1,21 @@
+entity Player {
+    Name String,
+    Username String,
+    EmailAddress String
+}
+
+entity Transactions {
+    TransactionId String,
+    Amount BigDecimal,
+    TransactionType String,
+    Balance BigDecimal,
+    PrincipalAmount BigDecimal,
+    TransactionDate ZonedDateTime
+}
+
+relationship OneToMany {
+	Player to Transactions{Player}
+}
+
+service all with serviceImpl
+dto * with mapstruct
